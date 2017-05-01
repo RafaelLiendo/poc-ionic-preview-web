@@ -1,6 +1,7 @@
 {
   "name": "poc-ionic-preview-web",
   "version": "0.0.0",
+  "author": "Rafael Liendo",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
