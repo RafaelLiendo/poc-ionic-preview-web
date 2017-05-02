@@ -1,4 +1,33 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="push" class="app-sidenav">
+    <md-nav-list>
+      <a md-list-item href="page1.html">Page 1</a>
+      <a md-list-item href="page2.html">Page 2</a>
+      <a md-list-item href="page3.html">Page 3</a>
+    </md-nav-list>
+  </md-sidenav>
+  <div class="content-container">
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.toggle()">
+        <md-icon class="md-24" >menu</md-icon>
+      </button>
+    </md-toolbar>
+    <div class="content">
+      <md-card class="container" [dragula]='"conteudos"' [dragulaModel]='widgets' dragulaNoDrop>
+        <div *ngFor="let widget of widgets">
+          <md-icon>{{widget.icone}}</md-icon>
+          <h4 style="display: inline-block">{{widget.nome}}</h4>
+        </div>
+      </md-card>
+      <md-card class="container" [dragula]='"conteudos"' [dragulaModel]='conteudos'>
+        <div *ngFor="let conteudo of conteudos">
+          <md-icon>{{conteudo.icone}}</md-icon>
+          <h4 style="display: inline-block">{{conteudo.nome}}</h4>
+        </div>
+      </md-card>
+      <div>
+      <iframe src="http://localhost:8100/" width="360" height="640" margin="0"></iframe>
+      </div>
+    </div>
+  </div>
+</md-sidenav-container>
